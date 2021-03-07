@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- JSTLを利用したページを処理するときにコンソールに表示されるエラーを抑止するための記述 -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  version="2.5">
+
+  <!-- XMLスキーマの宣言は既存のXMLからコピーした方が確実(web-app/ROOT/WEB-INF/web.xml) -->
+  <!-- 日本語宣言じゃないならencodingは不要 デフォルトのUTF-8で読み込まれる-->
+
+<!-- <filter>
+<filter-name>Set Character Encoding</filter-name>
+<filter-class>filter.SetCharacterEncodingFilter</filter-class>
+<init-param>
+<param-name>encoding</param-name>
+<param-value>EUC_JP</param-value>
+</init-param>
+</filter>
+
+<filter-mapping>
+<filter-name>Set Character Encoding</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
+  <filter>
+    <filter-name>DebugFilter</filter-name>
+    <filter-class>filter.DebugFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>DebugFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+
+
+  <!-- <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>fw.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<page-encoding>UTF-8</page-encoding>
+  		<include-prelude>/common/header.jsp</include-prelude>
+  		<include-coda>/common/footer.jsp</include-coda>
+  	</jsp-property-group>
+  </jsp-config>
+
+
+
+ <servlet>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>app.LifeCycleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/LifeCycleServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>ApplicationCounterServlet</servlet-name>
+    <servlet-class>app.ApplicationCounterServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ApplicationCounterServlet</servlet-name>
+    <url-pattern>/ApplicationCounterServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>RoughCounterServlet</servlet-name>
+    <servlet-class>app.RoughCounterServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RoughCounterServlet</servlet-name>
+    <url-pattern>/RoughCounterServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>ContextFileServlet</servlet-name>
+    <servlet-class>init.ContextFileServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ContextFileServlet</servlet-name>
+    <url-pattern>/ContextFileServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>ClasspathFileServlet</servlet-name>
+    <servlet-class>init.ClasspathFileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClasspathFileServlet</servlet-name>
+    <url-pattern>/ClasspathFileServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSServlet</servlet-name>
+    <servlet-class>init.BBSServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSServlet</servlet-name>
+    <url-pattern>/BBSServlet</url-pattern>
+  </servlet-mapping>
+
+
+ <servlet>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <servlet-class>http.UserInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <url-pattern>/UserInfoServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>http.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/RedirectServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSServlet3</servlet-name>
+    <servlet-class>http.BBSServlet3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSServlet3</servlet-name>
+    <url-pattern>/BBSServlet3</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSMessage3</servlet-name>
+    <servlet-class>http.BBSMessage3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSMessage3</servlet-name>
+    <url-pattern>/BBSMessage3</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSMessage</servlet-name>
+    <servlet-class>http.BBSMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSMessage</servlet-name>
+    <url-pattern>/BBSMessage</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSServlet2</servlet-name>
+    <servlet-class>http.BBSServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSServlet2</servlet-name>
+    <url-pattern>/BBSServlet4</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSMessage5</servlet-name>
+    <servlet-class>bebes.BBSMessage5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSMessage5</servlet-name>
+    <url-pattern>/BBSMessage5</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>BBSServlet5</servlet-name>
+    <servlet-class>bebes.BBSServlet5</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBSServlet5</servlet-name>
+    <url-pattern>/BBSServlet5</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>CookieCounterServlet</servlet-name>
+    <servlet-class>cookie.CookieCounterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieCounterServlet</servlet-name>
+    <url-pattern>/CookieCounterServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>DBManager</servlet-name>
+    <servlet-class>websample.DBManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBManager</servlet-name>
+    <url-pattern>/DBManager</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SelectServlet</servlet-name>
+    <servlet-class>websample.SelectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectServlet</servlet-name>
+    <url-pattern>/SelectServlet</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SelectServlet2</servlet-name>
+    <servlet-class>websample.SelectServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectServlet2</servlet-name>
+    <url-pattern>/SelectServlet2</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SimpleUpdateTest</servlet-name>
+    <servlet-class>websample.SimpleUpdateTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleUpdateTest</servlet-name>
+    <url-pattern>/SimpleUpdateTest</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>TestMySQL</servlet-name>
+    <servlet-class>websample.TestMySQL</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestMySQL</servlet-name>
+    <url-pattern>/TestMySQL</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SelectSamplele</servlet-name>
+    <servlet-class>websample.SelectSamplele</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectSamplele</servlet-name>
+    <url-pattern>/SelectSamplele</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SimpleFindTest</servlet-name>
+    <servlet-class>websample.SimpleFindTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleFindTest</servlet-name>
+    <url-pattern>/SimpleFindTest</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>SelectServlet3</servlet-name>
+    <servlet-class>websample.SelectServlet3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectServlet3</servlet-name>
+    <url-pattern>/SelectServlet3</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>DataSourceTest</servlet-name>
+    <servlet-class>websample.DataSourceTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataSourceTest</servlet-name>
+    <url-pattern>/DataSourceTest</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>refer</servlet-name>
+    <servlet-class>wiki.ReferServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>refer</servlet-name>
+    <url-pattern>/refer</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>list</servlet-name>
+    <servlet-class>wiki.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>list</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>create</servlet-name>
+    <servlet-class>wiki.CreateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>create</servlet-name>
+    <url-pattern>/create</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+    <servlet-name>update</servlet-name>
+    <servlet-class>wiki.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+
+  <!-- アプリケーション個別での初期化パラメータを設定した例 -->
+  <!-- <servlet>
+    <servlet-name>InitParamServlet</servlet-name>
+    <servlet-class>init.InitParamServlet</servlet-class>
+    <init-param>
+      <param-name>key1</param-name>
+      <param-value>value</param-value>
+    </init-param>
+    <init-param>
+      <param-name>key2</param-name>
+      <param-value>value2</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitParamServlet</servlet-name>
+    <url-pattern>/InitParamServlet</url-pattern>
+  </servlet-mapping> -->
+
+  <!-- アプリケーション全体のパラメータを設定した例 -->
+<!-- 
+  <context-param>
+    <param-name>appkey1</param-name>
+    <param-value>appvalue1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>appkey2</param-name>
+    <param-value>appvalue2</param-value>
+  </context-param> -->
+
+
+
+</web-app>
